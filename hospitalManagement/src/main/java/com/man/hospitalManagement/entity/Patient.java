@@ -10,6 +10,8 @@ import com.man.hospitalManagement.entity.type.BloodGroupType;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @ToString
@@ -36,5 +38,9 @@ public class Patient {
     private LocalDateTime createdAt;
 
     @OneToOne
+    @JoinColumn(name = "patient_insurence_id")
     private Insurence insurence;
+
+    @OneToMany(mappedBy = "patient")
+    private Set<Appointment> appointments = new HashSet<>();
 }

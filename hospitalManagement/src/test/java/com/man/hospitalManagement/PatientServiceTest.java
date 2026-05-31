@@ -12,8 +12,6 @@ import com.man.hospitalManagement.dto.IPatientInfo;
 import com.man.hospitalManagement.entity.Patient;
 import com.man.hospitalManagement.repository.PatientRepository;
 
-import lombok.var;
-
 @SpringBootTest
 public class PatientServiceTest {
 
