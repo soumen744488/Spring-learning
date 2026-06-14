@@ -24,7 +24,7 @@ public class Deparment {
     private String Name;
 
     @ManyToOne
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     private Doctor headDoctor;
 
     @ManyToMany
