@@ -33,4 +33,20 @@ public class InsurenceService {
 
 
     }
+
+    @Transactional
+    public Insurence updateInsurenceToPatient (Insurence  insurence, Long patientId){
+        Patient patient = patientRepository.findById(patientId).orElseThrow();
+
+        patient.setInsurence(insurence);
+        insurence.setPatient(patient);
+        return insurence;
+    }
+    @Transactional
+    public Patient removeInsurenceToPatient ( Long patientId){
+        Patient patient = patientRepository.findById(patientId).orElseThrow();
+
+        patient.setInsurence(null);
+        return patient;
+    }
 }
